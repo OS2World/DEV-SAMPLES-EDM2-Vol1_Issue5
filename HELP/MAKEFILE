@@ -1,0 +1,41 @@
+CLOPTS=-C+ -Ge+ -Gm- -Kb+ -Ms -S2ae -Sp -Ss+ -W3
+LINKOPTS=/MAP /NOI
+
+!IFDEF PROD
+CLOPTS=$(CLOPTS) -DPROD
+!ENDIF
+
+!IFDEF DEBUG
+CLOPTS=$(CLOPTS) -DDEBUG
+!ENDIF
+
+!IFDEF DEBUG
+CLOPTS=$(CLOPTS) -Ti+
+!ENDIF
+
+ALL:                            HELP.EXE \
+                                HELP.HLP
+
+HELP.EXE:                       HELP.OBJ \
+                                HELP.RES
+        LINK386 $(LINKOPTS) @<<
+HELP
+HELP
+HELP
+OS2386
+HELP
+<<
+        RC HELP.RES HELP.EXE
+
+HELP.RES:                       HELP.RC \
+                                RC.H
+        RC -r HELP.RC HELP.RES
+
+HELP.OBJ:                       HELP.C \
+                                RC.H
+        ICC $(CLOPTS) HELP.C
+
+HELP.HLP:                       HELP.IPP
+        IPFCPP -w -v -i HELP.IPP -o HELP.IPF
+        IPFC HELP.IPF
+

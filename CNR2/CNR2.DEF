@@ -1,0 +1,8 @@
+NAME CNR2 WINDOWAPI
+
+DESCRIPTION 'Sample for the 2nd Container Article
+Copyright (c) 1993 by Larry Salomon, Jr.
+All rights reserved.'
+
+STACKSIZE 0x4000
+

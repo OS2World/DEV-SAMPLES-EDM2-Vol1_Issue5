@@ -1,0 +1,24 @@
+;******************************************************************************
+;******************************************************************************
+;*
+;* EXR0R3 - A ring 0/ring 3 IFS skeleton
+;* Copyright (C) 1993 by Andre Asselin
+;*
+;* R0.DEF - .DEF file for ring 0 side
+;*
+;* History:
+;* 6/23/93 - created
+;*
+;******************************************************************************
+;******************************************************************************
+
+LIBRARY                 EXR0R3
+DESCRIPTION             'A ring 0/ring 3 IFS skeleton'
+EXETYPE                 OS2
+PROTMODE
+CODE                    PRELOAD
+DATA                    SINGLE PRELOAD
+STACKSIZE               0
+EXPORTS
+   FS_NAME
+   FS_ATTRIBUTE

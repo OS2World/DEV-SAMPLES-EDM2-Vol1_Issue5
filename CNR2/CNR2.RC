@@ -1,0 +1,25 @@
+#include <os2.h>
+#include "rc.h"
+
+ICON ICO_YEAR CNRYEAR.ICO
+ICON ICO_MONTH CNRMON.ICO
+
+MENU RES_CLIENT
+{
+   SUBMENU "~View   ", M_VIEW
+   {
+      MENUITEM "~Icon view", MI_ICONVIEW
+      MENUITEM "~Tree view", MI_ICONTREE
+   }
+   MENUITEM SEPARATOR
+   MENUITEM "~Arrange   ", MI_ARRANGE
+   MENUITEM SEPARATOR
+   SUBMENU "~Select", M_SELECT
+   {
+      MENUITEM "~Select all", MI_SELECTALL
+      MENUITEM "~Deselect all", MI_DESELECTALL
+   }
+   MENUITEM SEPARATOR
+   MENUITEM "E~xit", MI_EXIT
+}
+
